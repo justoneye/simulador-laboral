@@ -28,7 +28,7 @@ let nombreCompleto = "";
 let edad = 0;
 let tipoDocumento = "";
 let numeroDocumento = "";
-let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo, ibc, salud, pension, auxilioTrans;
+let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo, porcentajeARL, ibc, salud, pension, arl, auxilioTrans;
 let totalDevengado, totalDeducido, totalPago; 
 
 nombreCompleto = prompt("Escriba su nombre");
@@ -63,24 +63,34 @@ else if (edad > 60) {
 }
 else {
 
-  // Cálculo de obligaciones leborales ---------------------------------------------
+  // Cálculo de obligaciones leborales ----------------------------------------------------------------------------------------------------------------
 
   salario = prompt("Ingrese su salario (en COP)");
   comisiones = prompt("Ingrese el valor de sus comisiones, si aplica (en COP)"); 
   horasExtra = prompt("Ingrese el valor de sus hotas extra, si aplica (en COP)");
+  nivelRiesgo = parseInt(prompt("Seleccione el nivel de ARL:\n\n" + "1. 0.522%\n" + "2. 1.044%\n" + "3. 2.436%\n" + "4. 4.350%\n" + "5. 6.960%\n\n" + 
+    "(Ingrese un número del 1 al 5)"));
   
-  /*
-  nivelRiesgo = parseInt(prompt("Ingrese su nivel de riesgo"));
-  switch(nivelRiesgo){
-    case
-
-  } 
-  */
+  switch (nivelRiesgo) {
+    case 1: porcentajeARL = nivelesARL[0];
+      break;
+    case 2: porcentajeARL = nivelesARL[1];
+      break;
+    case 3: porcentajeARL = nivelesARL[2];
+      break;
+    case 4: porcentajeARL = nivelesARL[3];
+      break;
+    case 5: porcentajeARL = nivelesARL[4];
+      break;
+    default:
+      alert("Nivel de ARL no válido, por favor ingrese ÚNICAMENTE un número entre 1 y 5.");
+  }
 
   totalDevengado = salario + comisiones + horasExtra;
   ibc = calcularPorcentaje(totalDevengado, $porcentajeIBC);
   salud = calcularPorcentaje(ibc, $porcentajeSalud);
   fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, $porcentajeFSP) : 0;
   pension = calcularPorcentaje(ibc, $porcentajePension) + fondoSolidaridad;
+  arl = calcularPorcentaje(ibc, porcentajeARL);
   auxilioTrans = salario <= $SMMLV * 2 ? $SUB_TRANS : 0;
 }
