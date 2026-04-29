@@ -29,7 +29,7 @@ let edad = 0;
 let tipoDocumento = "";
 let numeroDocumento = "";
 let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo, porcentajeARL, ibc, salud, pension, arl, auxilioTrans;
-let totalDevengado, totalDeducido, totalPago; 
+let totalDevengado, totalDeducido, totalNeto; 
 
 nombreCompleto = prompt("Escriba su nombre");
 tipoDocumento = prompt("Ingrese su Tipo de Documento");
@@ -97,5 +97,5 @@ else {
   
   totalDeducido = salud + pension + arl;
   
-  totalPago = totalDevengado + auxilioTrans - totalDeducido
+  totalNeto = totalDevengado + auxilioTrans - totalDeducido;
 }
