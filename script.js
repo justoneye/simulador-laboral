@@ -14,6 +14,12 @@ const $SUB_TRANS = 249095;
 const $UVT = 52.37;
 const nivelesARL = [0.522, 1.044, 2.436, 4.350, 6.960];
 
+const $porcentajeIBC = 7
+const $porcentajeSalud = 4;
+const $porcentajePension = 4;
+const $porcentajeFSP = 1;
+
+
 
 // Variables para pedir al usuario
 
@@ -47,6 +53,10 @@ else if (edad >= 18 && edad < 25) {
 }
 else if (edad > 60) {
   mesadaPensional = prompt("Ingrese el valor de su mesada pensional (en COP)");
+
+  ibc = calcularPorcentaje(mesadaPensional, $porcentajeIBC);
+  salud = calcularPorcentaje(ibc, $porcentajeSalud);
+  fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, $porcentajeFSP) : 0;
 }
 else {
 
@@ -65,9 +75,9 @@ else {
   */
 
   totalDevengado = salario + comisiones + horasExtra;
-  ibc = calcularPorcentaje(totalDevengado, 0.7);
-  salud = calcularPorcentaje(ibc, 0.04);
-  fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, 0.01) : 0;
-  pension = calcularPorcentaje(ibc, 0.04) + fondoSolidaridad;
+  ibc = calcularPorcentaje(totalDevengado, $porcentajeIBC);
+  salud = calcularPorcentaje(ibc, $porcentajeSalud);
+  fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, $porcentajeFSP) : 0;
+  pension = calcularPorcentaje(ibc, $porcentajePension) + fondoSolidaridad;
   auxilioTrans = salario <= $SMMLV * 2 ? $SUB_TRANS : 0;
 }
