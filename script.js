@@ -21,8 +21,8 @@ let nombreCompleto = "";
 let edad = 0;
 let tipoDocumento = "";
 let numeroDocumento = "";
-let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo;
-let salud, pension, auxilioTrans;
+let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo, ibc, salud, pension, auxilioTrans;
+let totalDevengado, totalDeducido, totalPago; 
 
 nombreCompleto = prompt("Escriba su nombre");
 tipoDocumento = prompt("Ingrese su Tipo de Documento");
@@ -45,7 +45,10 @@ if (edad < 18) {
 else if (edad >= 18 && edad < 25) {
   alert("Usuario beneficiario por cotizante. No se calcularán las obligaciones.");
 }
-else if (edad >= 25 && edad < 60) {
+else if (edad > 60) {
+  mesadaPensional = prompt("Ingrese el valor de su mesada pensional (en COP)");
+}
+else {
 
   // Cálculo de obligaciones leborales ---------------------------------------------
 
@@ -61,15 +64,10 @@ else if (edad >= 25 && edad < 60) {
   } 
   */
 
-  let totalDevengado = salario + comisiones + horasExtra;
-
-  let ibc = calcularPorcentaje(totalDevengado, 0.7);
+  totalDevengado = salario + comisiones + horasExtra;
+  ibc = calcularPorcentaje(totalDevengado, 0.7);
   salud = calcularPorcentaje(ibc, 0.04);
   fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, 0.01) : 0;
   pension = calcularPorcentaje(ibc, 0.04) + fondoSolidaridad;
   auxilioTrans = salario <= $SMMLV * 2 ? $SUB_TRANS : 0;
-}
-
-else if (edad > 60) {
-  // Pensionado
 }
