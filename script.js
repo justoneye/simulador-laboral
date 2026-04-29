@@ -11,11 +11,11 @@ Simulación de Obligaciones Laborales
 // Constantes de Cálculo
 
 const $SMMLV = 1750905;
-const $SUB_TRANS = 249095; 
+const $SUBSIDIO_TRANS = 249095; 
 const $UVT = 52.37;
 const nivelesARL = [0.522, 1.044, 2.436, 4.350, 6.960];
 
-const $porcentajeIBC = 7
+const $porcentajeIBC = 70
 const $porcentajeSalud = 4;
 const $porcentajePension = 4;
 const $porcentajeFSP = 1;
@@ -52,7 +52,7 @@ if (edad < 18) {
   alert("No es posible continuar: El usuario es menor de edad.");
 }
 else if (edad >= 18 && edad < 25) {
-  alert("Usuario beneficiario por cotizante. No se calcularán las obligaciones.");
+  alert("Usuario beneficiario como cotizante. No se calcularán las obligaciones.");
 }
 else if (edad > 60) {
   mesadaPensional = prompt("Ingrese el valor de su mesada pensional (en COP)");
@@ -87,10 +87,15 @@ else {
   }
 
   totalDevengado = salario + comisiones + horasExtra;
+  auxilioTrans = salario <= $SMMLV * 2 ? $SUBSIDIO_TRANS : 0;
+
   ibc = calcularPorcentaje(totalDevengado, $porcentajeIBC);
   salud = calcularPorcentaje(ibc, $porcentajeSalud);
   fondoSolidaridad = ibc >= $SMMLV * 4 ? calcularPorcentaje(ibc, $porcentajeFSP) : 0;
   pension = calcularPorcentaje(ibc, $porcentajePension) + fondoSolidaridad;
   arl = calcularPorcentaje(ibc, porcentajeARL);
-  auxilioTrans = salario <= $SMMLV * 2 ? $SUB_TRANS : 0;
+  
+  totalDeducido = salud + pension + arl;
+  
+  totalPago = totalDevengado + auxilioTrans - totalDeducido
 }
