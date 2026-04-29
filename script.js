@@ -7,6 +7,7 @@ Simulación de Obligaciones Laborales
 */
 
 
+
 // Constantes de Cálculo
 
 const $SMMLV = 1750905;
@@ -36,11 +37,13 @@ numeroDocumento = prompt("Escriba su Número de Documento");
 edad = parseInt(prompt("Ingrese su edad"));
 
 
+
 // Funciones
 
 function calcularPorcentaje(base, porcentaje){
   return base * (porcentaje / 100);
 }
+
 
 
 // Validar Edad
