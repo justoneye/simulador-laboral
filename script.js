@@ -12,6 +12,7 @@ Simulación de Obligaciones Laborales
 const $SMMLV = 1750905;
 const $SUB_TRANS = 249095; 
 const $UVT = 52.37;
+const nivelesARL = [0.522, 1.044, 2.436, 4.350, 6.960];
 
 
 // Variables para pedir al usuario
@@ -32,7 +33,7 @@ edad = parseInt(prompt("Ingrese su edad"));
 // Funciones
 
 function calcularPorcentaje(base, porcentaje){
-  return base * porcentaje;
+  return base * (porcentaje / 100);
 }
 
 
@@ -51,7 +52,14 @@ else if (edad >= 25 && edad < 60) {
   salario = prompt("Ingrese su salario (en COP)");
   comisiones = prompt("Ingrese el valor de sus comisiones, si aplica (en COP)"); 
   horasExtra = prompt("Ingrese el valor de sus hotas extra, si aplica (en COP)");
-  nivelRiesgo = prompt("Ingrese su nivel de riesgo"); 
+  
+  /*
+  nivelRiesgo = parseInt(prompt("Ingrese su nivel de riesgo"));
+  switch(nivelRiesgo){
+    case
+
+  } 
+  */
 
   let totalDevengado = salario + comisiones + horasExtra;
 
