@@ -98,4 +98,9 @@ else {
   totalDeducido = salud + pension + arl;
   
   totalNeto = totalDevengado + auxilioTrans - totalDeducido;
+
+  alert(`Simulacro de Obligaciones Laborales para\n${nombreCompleto.toUpperCase()}\n\n` 
+  + `Devengado: \t\t $${totalDevengado.toFixed(0)}\n\n`
+  + `Deducido: \t\t $${totalDeducido.toFixed(0)}\n\n`
+  + `TOTAL: \t\t $${totalNeto.toFixed(0)}\n\n`);
 }
