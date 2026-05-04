@@ -1,12 +1,108 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-  <head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Simulador de Pago de Obligaciones</title> 
-  </head> 
-
-  <body> 
-    <script src="script.js"></script> 
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulación de Obligaciones Laborales</title>
+  <link href="estilos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+ 
+  <header>
+    <p class="eyebrow">Universidad El Bosque · Lenguajes Digitales III</p>
+    <h1>Simulación de Obligaciones Laborales</h1>
+    <p>Ingrese sus datos para calcular devengado, deducciones y neto.</p>
+  </header>
+ 
+  <!-- ── Sección 1: Datos personales ── -->
+  <div class="card">
+    <div class="card-title">01 — Datos personales</div>
+    <div class="form-grid">
+      <div class="field full">
+        <label for="nombreCompleto">Nombre completo</label>
+        <input type="text" id="nombreCompleto" placeholder="Ej. María Camila Torres" />
+      </div>
+      <div class="field">
+        <label for="tipoDocumento">Tipo de documento</label>
+        <select id="tipoDocumento">
+          <option value="">— Seleccione —</option>
+          <option value="CC">Cédula de Ciudadanía (CC)</option>
+          <option value="CE">Cédula de Extranjería (CE)</option>
+          <option value="TI">Tarjeta de Identidad (TI)</option>
+          <option value="PA">Pasaporte (PA)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="numeroDocumento">Número de documento</label>
+        <input type="text" id="numeroDocumento" placeholder="Ej. 1023456789" />
+      </div>
+      <div class="field">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" min="0" max="120" placeholder="Ej. 32" />
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Sección 2: Pensionado (> 60) ── -->
+  <div class="card section-conditional" id="seccionPensionado">
+    <div class="card-title">02 — Información pensional</div>
+    <div class="form-grid">
+      <div class="field full">
+        <label for="mesadaPensional">Mesada pensional (COP)</label>
+        <input type="number" id="mesadaPensional" min="0" placeholder="Ej. 3500000" />
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Sección 2: Trabajador activo (25–60) ── -->
+  <div class="card section-conditional" id="seccionTrabajador">
+    <div class="card-title">02 — Información salarial</div>
+    <div class="form-grid">
+      <div class="field">
+        <label for="salario">Salario base (COP)</label>
+        <input type="number" id="salario" min="0" placeholder="Ej. 2500000" />
+      </div>
+      <div class="field">
+        <label for="comisiones">Comisiones (COP)</label>
+        <input type="number" id="comisiones" min="0" placeholder="0 si no aplica" />
+      </div>
+      <div class="field">
+        <label for="horasExtra">Horas extra (COP)</label>
+        <input type="number" id="horasExtra" min="0" placeholder="0 si no aplica" />
+      </div>
+      <div class="field">
+        <label for="nivelRiesgo">Nivel de riesgo ARL</label>
+        <select id="nivelRiesgo">
+          <option value="">— Seleccione —</option>
+          <option value="0">I — 0.522 %</option>
+          <option value="1">II — 1.044 %</option>
+          <option value="2">III — 2.436 %</option>
+          <option value="3">IV — 4.350 %</option>
+          <option value="4">V — 6.960 %</option>
+        </select>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ── Aviso para menores / beneficiarios ── -->
+  <div class="notice" id="avisoEspecial"></div>
+ 
+  <!-- ── Botón calcular ── -->
+  <div style="width:100%;max-width:680px;margin-bottom:1.5rem;" id="wrapBtn">
+    <button class="btn-primary" onclick="calcular()">
+      <span>Calcular</span>
+      <span style="font-size:1rem;">→</span>
+    </button>
+  </div>
+ 
+  <!-- ── Panel de resultados ── -->
+  <div id="resultado" class="card">
+    <div class="result-header">
+      <span class="result-name" id="resNombre"></span>
+      <span class="result-badge" id="resBadge">Activo</span>
+    </div>
+    <div id="resFilas"></div>
+  </div>
+</body>
+</html> 
