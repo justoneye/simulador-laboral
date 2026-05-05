@@ -2,8 +2,8 @@
 
 /* ── Variables ─────────────────────────────────── */
   :root {
+      --blanco:    #ffffff;
       --bg:        #f4f1ec;
-      --surface:   #ffffff;
       --border:    #d6cfc4;
       --accent:    #1a3a2f;
       --accent2:   #c8a96e;
@@ -27,32 +27,31 @@
       flex-direction: column;
       align-items: center;
       padding: 2.5rem 1rem 4rem;
+      max-width: 1200px;
     }
- 
-    /* ── Header ────────────────────────────────────── */
-    header {
-      width: 100%;
-      max-width: 680px;
-      margin-bottom: 2rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 1.2rem;
-    }
- 
-    header .eyebrow {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
- 
-    header h1 {
+
+    h1 {
       font-family: var(--texto);
       font-weight: 600;
       font-size: 1.5rem;
       color: var(--accent);
       line-height: 1.2;
+    }
+ 
+    /* ── Header ────────────────────────────────────── */
+    header {
+      width: 100%;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1.2rem;
+
+      & .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      }
     }
  
     header p {
@@ -63,19 +62,16 @@
  
     /* ── Card ──────────────────────────────────────── */
     .card {
-      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radio);
       padding: 2rem;
       width: 100%;
-      max-width: 680px;
       margin-bottom: 1.2rem;
     }
  
     .card-title {
       font-family: var(--mono);
       font-size: 0.68rem;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--accent2);
       margin-bottom: 1.2rem;
@@ -111,7 +107,6 @@
       font-size: 0.78rem;
       font-weight: 600;
       color: var(--muted);
-      letter-spacing: 0.03em;
     }
  
     input, select {
@@ -150,10 +145,9 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--accent);
-      color: #fff;
+      color: var(--blanco);
       font-family: var(--mono);
       font-size: 0.82rem;
-      letter-spacing: 0.06em;
       padding: 0.7rem 1.6rem;
       border: none;
       border-radius: var(--radio);
@@ -168,7 +162,6 @@
     #resultado {
       display: none;
       width: 100%;
-      max-width: 680px;
     }
  
     #resultado.visible { display: block; }
@@ -181,16 +174,16 @@
     }
  
     .result-name {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--accent);
     }
  
     .result-badge {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.75rem;
       background: var(--accent2);
-      color: #fff;
+      color: var(--blanco);
       padding: 0.2rem 0.6rem;
       border-radius: 24px;
     }
@@ -201,7 +194,7 @@
       align-items: center;
       padding: 0.6rem 0;
       border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
+      font-size: 0.75rem;
     }
  
     .result-row:last-child { border-bottom: none; }
@@ -210,7 +203,7 @@
  
     .result-row .value {
       font-family: var(--mono);
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
  
     .result-row.highlight .value {
@@ -224,7 +217,7 @@
     /* ── Notice ────────────────────────────────────── */
     .notice {
       display: none;
-      background: #fff8e6;
+      background: var(--blanco);
       border: 1px solid #e6c96a;
       border-left: 4px solid var(--accent2);
       border-radius: var(--radius);
@@ -237,7 +230,7 @@
     .notice.visible { display: block; }
  
     /* ── Responsive ────────────────────────────────── */
-    @media (max-width: 540px) {
+    @media (max-width: 1200px) {
       .form-grid { grid-template-columns: 1fr; }
       .form-grid .full { grid-column: 1; }
     }
