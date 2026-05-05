@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* ── Variables ─────────────────────────────────── */
+/* Variables ─────────────────────────────────── */
 :root {
   --blanco:    #ffffff;
   --bg:        #f4f1ec;
@@ -16,8 +16,10 @@
   --texto:     'Montserrat', sans-serif;
 }
 
-/* ── Reset ─────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reset de estilos ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
 
 body {
   font-family: var(--texto);
@@ -111,7 +113,6 @@ label {
 
 input, select {
   font-family: var(--texto);
-  font-size: 0.92rem;
   color: var(--text);
   background: var(--bg);
   border: 1px solid var(--border);
