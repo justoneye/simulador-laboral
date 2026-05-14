@@ -28,7 +28,9 @@ let nombreCompleto = "";
 let edad = 0;
 let tipoDocumento = "";
 let numeroDocumento = "";
-let salario, mesadaPensional, comisiones, horasExtra, nivelRiesgo, porcentajeARL, ibc, salud, pension, arl, auxilioTrans;
+let comisiones = 0;
+let horasExtra = 0;
+let salario, mesadaPensional, nivelRiesgo, porcentajeARL, ibc, salud, pension, arl, auxilioTrans;
 let totalDevengado, totalDeducido, totalNeto; 
 
 nombreCompleto = prompt("Escriba su nombre");
@@ -104,3 +106,4 @@ else {
   + `Deducido: \t\t $${totalDeducido.toFixed(0)}\n\n`
   + `TOTAL: \t\t $${totalNeto.toFixed(0)}\n\n`);
 }
+
