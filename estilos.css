@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Variables ─────────────────────────────────── */
@@ -12,7 +13,7 @@
   --error:     #b53a2f;
   --success:   #1a5c3a;
   --radio:     8px;
-  --mono:      'IBM Plex Mono', monospace;
+  --titulo:    "Inconsolata", monospace;
   --texto:     'Montserrat', sans-serif;
 }
 
@@ -35,15 +36,15 @@ body {
 
 h1 {
   font-family: var(--texto);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 2rem;
   color: var(--accent);
   line-height: 1.2;
 }
 
 h2 {
-  font-family: var(--mono);
-  font-size: 0.75rem;
+  font-family: var(--titulo);
+  font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--accent2);
 }
@@ -57,10 +58,11 @@ p {
 /* ── Header ────────────────────────────────────── */
 header {
   width: 100%;
-  margin-bottom: 2rem;
   border-bottom: 2px solid var(--accent);
-  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
   text-align: center;
+  gap: 0.5rem;
 }
 
 /* ── Card ──────────────────────────────────────── */
@@ -123,7 +125,7 @@ input:focus, select:focus {
 button {
   background: var(--accent);
   color: var(--blanco);
-  font-family: var(--mono);
+  font-family: var(--titulo);
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--radio);
@@ -155,7 +157,7 @@ button:active { transform: translateY(1px); }
 }
 
 .result-badge {
-  font-family: var(--mono);
+  font-family: var(--titulo);
   font-size: 0.75rem;
   background: var(--accent2);
   color: var(--blanco);
@@ -177,7 +179,7 @@ button:active { transform: translateY(1px); }
 .result-row .label { color: var(--muted); }
 
 .result-row .value {
-  font-family: var(--mono);
+  font-family: var(--titulo);
   font-size: 0.75rem;
 }
 
