@@ -40,6 +40,23 @@ h1 {
   line-height: 1.2;
 }
 
+h2 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
 /* ── Header ────────────────────────────────────── */
 header {
   width: 100%;
@@ -69,24 +86,6 @@ header p {
   padding: 2rem;
   width: 100%;
   margin-bottom: 1.2rem;
-}
-
-.card-title {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  color: var(--accent2);
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.card-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
 }
 
 /* ── Form grid ─────────────────────────────────── */
