@@ -17,7 +17,7 @@
   <!-- ── Sección 1: Datos personales ── -->
   <section >
     <h2>01 — Datos personales</h2>
-    <div class="form-grid">
+    <form>
       <div class="field">
         <label for="nombreCompleto">Nombre completo</label>
         <input type="text" id="nombreCompleto" placeholder="(Tal como aparece en su documnto)" />
@@ -41,24 +41,29 @@
         <label for="edad">Edad</label>
         <input type="number" id="edad" min="0" max="120" placeholder="Ej. 32" />
       </div>
-    </div>
+      <div>
+        <button class="btn-primary" id="wrapBtn" onclick="calcular()">
+          <span>Calcular</span>
+        </button>
+      </div>
+    </form>
   </section>
  
   <!-- ── Sección 2: Pensionado (> 60) ── -->
   <section class="conditional" id="seccionPensionado">
     <h2>02 — Información pensional</h2>
-    <div class="form-grid">
+    <form>
       <div class="field">
         <label for="mesadaPensional">Mesada pensional (COP)</label>
         <input type="number" id="mesadaPensional" min="0" placeholder="(Sin comas, puntos o signos)" />
       </div>
-    </div>
+    </form>
   </section>
  
   <!-- ── Sección 2: Trabajador activo (25–60) ── -->
   <section class="conditional" id="seccionTrabajador">
     <h2>02 — Información salarial</h2>
-    <div class="form-grid">
+    <form>
       <div class="field">
         <label for="salario">Salario base (COP)</label>
         <input type="number" id="salario" min="0" placeholder="(Sin comas, puntos o signos)" />
@@ -82,19 +87,11 @@
           <option value="4">V — 6.960 %</option>
         </select>
       </div>
-    </div>
+    </form>
   </section>
  
   <!-- ── Aviso para menores / beneficiarios ── -->
   <div class="notice" id="avisoEspecial"></div>
- 
-  <!-- ── Botón calcular ── -->
-  <div style="width:100%;max-width:680px;margin-bottom:1.5rem;" id="wrapBtn">
-    <button class="btn-primary" onclick="calcular()">
-      <span>Calcular</span>
-      <span style="font-size:1rem;">→</span>
-    </button>
-  </div>
  
   <!-- ── Panel de resultados ── -->
   <div id="resultado" class="card">
