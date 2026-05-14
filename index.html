@@ -11,22 +11,26 @@
   <header>
     <p class="eyebrow">Universidad El Bosque · Lenguajes Digitales III</p>
     <h1>Simulación de Obligaciones Laborales</h1>
-    <p>Ingrese sus datos para calcular devengado, deducciones y neto.</p>
   </header>
  
   <!-- ── Sección 1: Datos personales ── -->
   <section >
     <h2>01 — Datos personales</h2>
+    <p>Ingrese sus datos para calcular devengado, deducciones y neto.</p>
     <form>
       <div class="field">
         <label for="nombreCompleto">Nombre completo</label>
-        <input type="text" id="nombreCompleto" placeholder="(Tal como aparece en su documnto)" />
+        <input type="text" id="nombreCompleto" placeholder="(Tal como aparece en su documnto)" required/>
         </select>
       </div>
       <div class="field">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" min="0" max="130" placeholder="(Años cumplidos al día de hoy)" required/>
+      </div>
+      <div class="field">
         <label for="tipoDocumento">Tipo de documento</label>
-        <select id="tipoDocumento">
-          <option value="">— Seleccione —</option>
+        <select id="tipoDocumento" required>
+          <option value="">— Seleccione una de las opciones —</option>
           <option value="CC">Cédula de Ciudadanía (CC)</option>
           <option value="CE">Cédula de Extranjería (CE)</option>
           <option value="TI">Tarjeta de Identidad (TI)</option>
@@ -35,11 +39,7 @@
       </div>
       <div class="field">
         <label for="numeroDocumento">Número de documento</label>
-        <input type="text" id="numeroDocumento" placeholder="(Sin comas ni puntos)" />
-      </div>
-      <div class="field">
-        <label for="edad">Edad</label>
-        <input type="number" id="edad" min="0" max="120" placeholder="Ej. 32" />
+        <input type="text" id="numeroDocumento" placeholder="(Sin comas ni puntos)" required/>
       </div>
       <div class="button_divider">
         <button id="wrapBtn" onclick="calcular()">
@@ -49,36 +49,26 @@
     </form>
   </section>
  
-  <!-- ── Sección 2: Pensionado (> 60) ── -->
-  <section class="conditional" id="seccionPensionado">
-    <h2>02 — Información pensional</h2>
-    <form>
-      <div class="field">
-        <label for="mesadaPensional">Mesada pensional (COP)</label>
-        <input type="number" id="mesadaPensional" min="0" placeholder="(Sin comas, puntos o signos)" />
-      </div>
-    </form>
-  </section>
- 
   <!-- ── Sección 2: Trabajador activo (25–60) ── -->
   <section class="conditional" id="seccionTrabajador">
     <h2>02 — Información salarial</h2>
+    <p>Ingrese sus datos para calcular devengado, deducciones y neto.</p>
     <form>
       <div class="field">
         <label for="salario">Salario base (COP)</label>
-        <input type="number" id="salario" min="0" placeholder="(Sin comas, puntos o signos)" />
+        <input type="number" id="salario" min="0" placeholder="(Sin comas, puntos o signos)" required/>
       </div>
       <div class="field">
         <label for="comisiones">Comisiones (COP)</label>
-        <input type="number" id="comisiones" min="0" placeholder="0 si no aplica" />
+        <input type="number" id="comisiones" min="0" max="150000000"/>
       </div>
       <div class="field">
         <label for="horasExtra">Horas extra (COP)</label>
-        <input type="number" id="horasExtra" min="0" placeholder="0 si no aplica" />
+        <input type="number" id="horasExtra" min="0" max="150000000"/>
       </div>
       <div class="field">
         <label for="nivelRiesgo">Nivel de riesgo ARL</label>
-        <select id="nivelRiesgo">
+        <select id="nivelRiesgo" required>
           <option value="">— Seleccione —</option>
           <option value="0">I — 0.522 %</option>
           <option value="1">II — 1.044 %</option>
@@ -86,6 +76,18 @@
           <option value="3">IV — 4.350 %</option>
           <option value="4">V — 6.960 %</option>
         </select>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── Sección 2: Pensionado (> 60) ── -->
+  <section class="conditional" id="seccionPensionado">
+    <h2>02 — Información pensional</h2>
+    <p>Ingrese sus datos para calcular devengado, deducciones y neto.</p>
+    <form>
+      <div class="field">
+        <label for="mesadaPensional">Mesada pensional (COP)</label>
+        <input type="number" id="mesadaPensional" min="0" placeholder="(Sin comas, puntos o signos)" required/>
       </div>
     </form>
   </section>
