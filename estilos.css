@@ -137,23 +137,25 @@ select {
 .conditional.visible { display: block; }
 
 /* ── Button ────────────────────────────────────── */
-.btn-primary {
-  display: inline-flex;
+.button_divider{
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  border: var(--accent);
+  padding: 0rem 1.5rem;
+}
+
+button {
   background: var(--accent);
   color: var(--blanco);
   font-family: var(--mono);
-  font-size: 0.82rem;
-  padding: 0.7rem 1.6rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--radio);
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
 }
 
-.btn-primary:hover { background: #0f2a20; }
-.btn-primary:active { transform: translateY(1px); }
+button:hover { background: #0f2a20; }
+button:active { transform: translateY(1px); }
 
 /* ── Result panel ──────────────────────────────── */
 #resultado {
