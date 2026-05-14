@@ -233,5 +233,4 @@ select {
 /* ── Responsive ────────────────────────────────── */
 @media (max-width: 1200px) {
   .form-grid { grid-template-columns: 1fr; }
-  .form-grid .full { grid-column: 1; }
 }

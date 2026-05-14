@@ -18,9 +18,10 @@
   <div class="card">
     <div class="card-title">01 — Datos personales</div>
     <div class="form-grid">
-      <div class="field full">
+      <div class="field">
         <label for="nombreCompleto">Nombre completo</label>
-        <input type="text" id="nombreCompleto" placeholder="Ej. María Camila Torres" />
+        <input type="text" id="nombreCompleto" placeholder="(Tal como aparece en su documnto)" />
+        </select>
       </div>
       <div class="field">
         <label for="tipoDocumento">Tipo de documento</label>
@@ -34,7 +35,7 @@
       </div>
       <div class="field">
         <label for="numeroDocumento">Número de documento</label>
-        <input type="text" id="numeroDocumento" placeholder="Ej. 1023456789" />
+        <input type="text" id="numeroDocumento" placeholder="(Sin comas ni puntos)" />
       </div>
       <div class="field">
         <label for="edad">Edad</label>
@@ -47,9 +48,9 @@
   <div class="card section-conditional" id="seccionPensionado">
     <div class="card-title">02 — Información pensional</div>
     <div class="form-grid">
-      <div class="field full">
+      <div class="field">
         <label for="mesadaPensional">Mesada pensional (COP)</label>
-        <input type="number" id="mesadaPensional" min="0" placeholder="Ej. 3500000" />
+        <input type="number" id="mesadaPensional" min="0" placeholder="(Sin comas, puntos o signos)" />
       </div>
     </div>
   </div>
@@ -60,7 +61,7 @@
     <div class="form-grid">
       <div class="field">
         <label for="salario">Salario base (COP)</label>
-        <input type="number" id="salario" min="0" placeholder="Ej. 2500000" />
+        <input type="number" id="salario" min="0" placeholder="(Sin comas, puntos o signos)" />
       </div>
       <div class="field">
         <label for="comisiones">Comisiones (COP)</label>
