@@ -15,7 +15,7 @@
   </header>
  
   <!-- ── Sección 1: Datos personales ── -->
-  <div class="card">
+  <section >
     <h2>01 — Datos personales</h2>
     <div class="form-grid">
       <div class="field">
@@ -42,10 +42,10 @@
         <input type="number" id="edad" min="0" max="120" placeholder="Ej. 32" />
       </div>
     </div>
-  </div>
+  </section>
  
   <!-- ── Sección 2: Pensionado (> 60) ── -->
-  <div class="card section-conditional" id="seccionPensionado">
+  <section class="conditional" id="seccionPensionado">
     <h2>02 — Información pensional</h2>
     <div class="form-grid">
       <div class="field">
@@ -53,10 +53,10 @@
         <input type="number" id="mesadaPensional" min="0" placeholder="(Sin comas, puntos o signos)" />
       </div>
     </div>
-  </div>
+  </section>
  
   <!-- ── Sección 2: Trabajador activo (25–60) ── -->
-  <div class="card section-conditional" id="seccionTrabajador">
+  <section class="conditional" id="seccionTrabajador">
     <h2>02 — Información salarial</h2>
     <div class="form-grid">
       <div class="field">
@@ -83,7 +83,7 @@
         </select>
       </div>
     </div>
-  </div>
+  </section>
  
   <!-- ── Aviso para menores / beneficiarios ── -->
   <div class="notice" id="avisoEspecial"></div>

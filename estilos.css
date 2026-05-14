@@ -80,12 +80,11 @@ header p {
 }
 
 /* ── Card ──────────────────────────────────────── */
-.card {
+section {
   border: 1px solid var(--border);
   border-radius: var(--radio);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   width: 100%;
-  margin-bottom: 1.2rem;
 }
 
 /* ── Form grid ─────────────────────────────────── */
@@ -136,8 +135,8 @@ select {
 }
 
 /* ── Sections shown conditionally ─────────────── */
-.section-conditional { display: none; }
-.section-conditional.visible { display: block; }
+.conditional { display: none; }
+.conditional.visible { display: block; }
 
 /* ── Button ────────────────────────────────────── */
 .btn-primary {
